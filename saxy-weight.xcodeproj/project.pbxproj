@@ -14,6 +14,11 @@
 		0311E4F92076F5CD00579AA4 /* saxy_weight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0311E4F72076F5CD00579AA4 /* saxy_weight.xcdatamodeld */; };
 		0311E4FB2076F5CD00579AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0311E4FA2076F5CD00579AA4 /* Assets.xcassets */; };
 		0311E4FE2076F5CD00579AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0311E4FC2076F5CD00579AA4 /* LaunchScreen.storyboard */; };
+		0311E5092077163400579AA4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E5082077163400579AA4 /* Card.swift */; };
+		0311E50C207719FA00579AA4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E50B207719FA00579AA4 /* HomeVC.swift */; };
+		0311E50E20771A0E00579AA4 /* WeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E50D20771A0E00579AA4 /* WeightVC.swift */; };
+		0311E51020771A2000579AA4 /* LogbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E50F20771A2000579AA4 /* LogbookVC.swift */; };
+		0311E51220771A2E00579AA4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E51120771A2E00579AA4 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,11 @@
 		0311E4FA2076F5CD00579AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0311E4FD2076F5CD00579AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0311E4FF2076F5CD00579AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0311E5082077163400579AA4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0311E50B207719FA00579AA4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		0311E50D20771A0E00579AA4 /* WeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightVC.swift; sourceTree = "<group>"; };
+		0311E50F20771A2000579AA4 /* LogbookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookVC.swift; sourceTree = "<group>"; };
+		0311E51120771A2E00579AA4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		8539E7B33FE5D1D39BD48B02 /* Pods_saxy_weight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_saxy_weight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E8DE75A73334205173E677 /* Pods-saxy-weight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saxy-weight.release.xcconfig"; path = "Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight.release.xcconfig"; sourceTree = "<group>"; };
 		F6667188EB63A4CA90EED322 /* Pods-saxy-weight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saxy-weight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,8 +73,9 @@
 		0311E4EF2076F5CD00579AA4 /* saxy-weight */ = {
 			isa = PBXGroup;
 			children = (
-				0311E4F02076F5CD00579AA4 /* AppDelegate.swift */,
-				0311E4F22076F5CD00579AA4 /* ViewController.swift */,
+				0311E507207701C600579AA4 /* Controllers */,
+				0311E506207701BB00579AA4 /* Views */,
+				0311E505207701B300579AA4 /* Models */,
 				0311E4F42076F5CD00579AA4 /* Main.storyboard */,
 				0311E4FA2076F5CD00579AA4 /* Assets.xcassets */,
 				0311E4FC2076F5CD00579AA4 /* LaunchScreen.storyboard */,
@@ -72,6 +83,42 @@
 				0311E4F72076F5CD00579AA4 /* saxy_weight.xcdatamodeld */,
 			);
 			path = "saxy-weight";
+			sourceTree = "<group>";
+		};
+		0311E505207701B300579AA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0311E506207701BB00579AA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0311E5082077163400579AA4 /* Card.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0311E507207701C600579AA4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0311E50A207719B700579AA4 /* TabNavigator */,
+				0311E4F02076F5CD00579AA4 /* AppDelegate.swift */,
+				0311E4F22076F5CD00579AA4 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0311E50A207719B700579AA4 /* TabNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				0311E50B207719FA00579AA4 /* HomeVC.swift */,
+				0311E50D20771A0E00579AA4 /* WeightVC.swift */,
+				0311E50F20771A2000579AA4 /* LogbookVC.swift */,
+				0311E51120771A2E00579AA4 /* SettingsVC.swift */,
+			);
+			path = TabNavigator;
 			sourceTree = "<group>";
 		};
 		15100C7C33B6EAC81E2F27A1 /* Pods */ = {
@@ -223,8 +270,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0311E4F32076F5CD00579AA4 /* ViewController.swift in Sources */,
+				0311E50C207719FA00579AA4 /* HomeVC.swift in Sources */,
 				0311E4F92076F5CD00579AA4 /* saxy_weight.xcdatamodeld in Sources */,
 				0311E4F12076F5CD00579AA4 /* AppDelegate.swift in Sources */,
+				0311E51020771A2000579AA4 /* LogbookVC.swift in Sources */,
+				0311E51220771A2E00579AA4 /* SettingsVC.swift in Sources */,
+				0311E50E20771A0E00579AA4 /* WeightVC.swift in Sources */,
+				0311E5092077163400579AA4 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
