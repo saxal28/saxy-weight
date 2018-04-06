@@ -1,0 +1,6 @@
+framework module Pods_saxy_weight {
+  umbrella header "Pods-saxy-weight-umbrella.h"
+
+  export *
+  module * { export * }
+}

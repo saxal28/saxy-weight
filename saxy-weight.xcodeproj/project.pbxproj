@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01918A36AF7A17E1BE5FF362 /* Pods_saxy_weight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8539E7B33FE5D1D39BD48B02 /* Pods_saxy_weight.framework */; };
 		0311E4F12076F5CD00579AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E4F02076F5CD00579AA4 /* AppDelegate.swift */; };
 		0311E4F32076F5CD00579AA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E4F22076F5CD00579AA4 /* ViewController.swift */; };
 		0311E4F62076F5CD00579AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0311E4F42076F5CD00579AA4 /* Main.storyboard */; };
@@ -24,6 +25,9 @@
 		0311E4FA2076F5CD00579AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0311E4FD2076F5CD00579AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0311E4FF2076F5CD00579AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8539E7B33FE5D1D39BD48B02 /* Pods_saxy_weight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_saxy_weight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5E8DE75A73334205173E677 /* Pods-saxy-weight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saxy-weight.release.xcconfig"; path = "Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight.release.xcconfig"; sourceTree = "<group>"; };
+		F6667188EB63A4CA90EED322 /* Pods-saxy-weight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saxy-weight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01918A36AF7A17E1BE5FF362 /* Pods_saxy_weight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				0311E4EF2076F5CD00579AA4 /* saxy-weight */,
 				0311E4EE2076F5CD00579AA4 /* Products */,
+				15100C7C33B6EAC81E2F27A1 /* Pods */,
+				73900DD28116A0A28FAACB08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = "saxy-weight";
 			sourceTree = "<group>";
 		};
+		15100C7C33B6EAC81E2F27A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6667188EB63A4CA90EED322 /* Pods-saxy-weight.debug.xcconfig */,
+				C5E8DE75A73334205173E677 /* Pods-saxy-weight.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		73900DD28116A0A28FAACB08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8539E7B33FE5D1D39BD48B02 /* Pods_saxy_weight.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0311E5022076F5CD00579AA4 /* Build configuration list for PBXNativeTarget "saxy-weight" */;
 			buildPhases = (
+				919D92A86E83766A4A24C9D4 /* [CP] Check Pods Manifest.lock */,
 				0311E4E92076F5CD00579AA4 /* Sources */,
 				0311E4EA2076F5CD00579AA4 /* Frameworks */,
 				0311E4EB2076F5CD00579AA4 /* Resources */,
+				5E3848621D7307EAC9CD1E37 /* [CP] Embed Pods Frameworks */,
+				E179E5E01FED379954F0412A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E3848621D7307EAC9CD1E37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		919D92A86E83766A4A24C9D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-saxy-weight-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E179E5E01FED379954F0412A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0311E4E92076F5CD00579AA4 /* Sources */ = {
@@ -276,6 +359,7 @@
 		};
 		0311E5032076F5CD00579AA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6667188EB63A4CA90EED322 /* Pods-saxy-weight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +375,7 @@
 		};
 		0311E5042076F5CD00579AA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5E8DE75A73334205173E677 /* Pods-saxy-weight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
