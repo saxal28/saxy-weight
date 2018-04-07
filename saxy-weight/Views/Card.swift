@@ -9,7 +9,12 @@
 import UIKit
 
 class Card: UIView {
-
-    @IBOutlet weak var view: UIView!
+    
+    func addShadow(){
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowColor = UIColor.black.cgColor
+    }
 
 }
