@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CHP-5L-H5c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZs-XQ-Cem">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="-840"/>
+            <point key="canvasLocation" x="286" y="-953"/>
         </scene>
         <!--Enter Weight-->
         <scene sceneID="g8V-xA-AQm">
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GaR-cj-dsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="651"/>
+            <point key="canvasLocation" x="1926" y="839"/>
         </scene>
         <!--Home-->
         <scene sceneID="fV3-34-eBW">
@@ -223,12 +223,23 @@
                                     <constraint firstAttribute="height" constant="86" id="ghW-uE-rqT"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ial-5f-Y2V" customClass="Card" customModule="saxy_weight" customModuleProvider="target">
+                                <rect key="frame" x="40" y="106" width="295" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NJH-0W-Pyx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23137254901960785" green="0.26666666666666666" blue="0.29411764705882354" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstItem="ubk-Bm-PRh" firstAttribute="trailing" secondItem="Ial-5f-Y2V" secondAttribute="trailing" constant="40" id="5mj-wj-jX4"/>
                             <constraint firstItem="Rje-V8-O0W" firstAttribute="leading" secondItem="ubk-Bm-PRh" secondAttribute="leading" id="E4m-U5-CXH"/>
                             <constraint firstItem="Rje-V8-O0W" firstAttribute="trailing" secondItem="ubk-Bm-PRh" secondAttribute="trailing" id="YoO-3L-tUu"/>
+                            <constraint firstItem="Ial-5f-Y2V" firstAttribute="top" secondItem="Rje-V8-O0W" secondAttribute="bottom" constant="20" id="b7C-UB-KsZ"/>
                             <constraint firstItem="Rje-V8-O0W" firstAttribute="top" secondItem="Xl7-gn-fCs" secondAttribute="top" id="gMY-SL-X6u"/>
+                            <constraint firstItem="Ial-5f-Y2V" firstAttribute="centerX" secondItem="Xl7-gn-fCs" secondAttribute="centerX" id="lER-4C-fy3"/>
+                            <constraint firstItem="Ial-5f-Y2V" firstAttribute="leading" secondItem="ubk-Bm-PRh" secondAttribute="leading" constant="40" id="oot-Si-F1p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ubk-Bm-PRh"/>
                     </view>
@@ -236,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qt-Js-stA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="-701"/>
+            <point key="canvasLocation" x="1926" y="-608"/>
         </scene>
         <!--Logbook-->
         <scene sceneID="RNb-FG-CyA">
@@ -279,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flZ-W4-2AZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2070" y="308"/>
+            <point key="canvasLocation" x="1926" y="110"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Jx5-aH-IkK">
@@ -311,6 +322,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze0-b5-17Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1022" y="-145"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fSY-QZ-kKA">
+            <objects>
+                <viewController id="09r-5L-p9o" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w0X-qq-myt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="LTc-oT-Knq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3b-Nr-mNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gs6-b3-faN">
+            <objects>
+                <viewController id="MGG-kl-wE0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zCh-vF-DVj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="8wL-Ya-xiG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kby-AW-yAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
