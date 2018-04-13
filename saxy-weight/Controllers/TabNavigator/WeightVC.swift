@@ -30,12 +30,28 @@ class WeightVC: UIViewController {
         }
         
     }
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         weightCard.addShadow()
         
         weightInput.becomeFirstResponder()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        print("keyboardWillShow")
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification){
+        print("keyboardWillHide")
     }
     
     func addWeight(stringWeight weight: String){
