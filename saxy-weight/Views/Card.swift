@@ -42,6 +42,7 @@ class Card: UIView {
     func commonInit(){
         addShadow()
         self.backgroundColor = #colorLiteral(red: 0.2588235294, green: 0.2980392157, blue: 0.3294117647, alpha: 1)
+        self.layer.cornerRadius = 10
         
     }
     
