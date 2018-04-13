@@ -13,12 +13,17 @@ class RoundedButton: UIButton {
     
     
     override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupButton()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         setupButton()
     }
 
     func setupButton(){
-        self.layer.cornerRadius = 50
-        self.backgroundColor = UIColor.green
+        self.layer.cornerRadius = self.frame.width / 2
     }
 
 }

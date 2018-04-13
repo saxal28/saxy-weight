@@ -210,13 +210,6 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5in-IV-ffv">
-                                        <rect key="frame" x="333" y="53" width="22" height="22"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="CHP-5L-H5c" kind="show" id="4bX-uz-BaE"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23137254901960785" green="0.26666666666666666" blue="0.29411764705882354" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
@@ -225,8 +218,6 @@
                                     <constraint firstAttribute="trailing" secondItem="bHC-gF-371" secondAttribute="trailing" id="EaB-Lt-iaT"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="86" id="SRd-ph-AzU"/>
                                     <constraint firstAttribute="height" constant="86" id="ghW-uE-rqT"/>
-                                    <constraint firstAttribute="trailing" secondItem="5in-IV-ffv" secondAttribute="trailing" constant="20" id="h2R-3Z-6iS"/>
-                                    <constraint firstItem="5in-IV-ffv" firstAttribute="centerY" secondItem="bHC-gF-371" secondAttribute="centerY" id="oE4-Jc-vlt"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ial-5f-Y2V" customClass="Card" customModule="saxy_weight" customModuleProvider="target">
@@ -356,7 +347,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="px2-3M-f8t" customClass="RoundedButton" customModule="saxy_weight" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="px2-3M-f8t" customClass="RoundedButton" customModule="saxy_weight">
                                 <rect key="frame" x="162" y="649" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.74901960779999999" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
@@ -364,6 +355,9 @@
                                     <constraint firstAttribute="width" constant="50" id="CrR-Ga-XFM"/>
                                 </constraints>
                                 <state key="normal" image="Add"/>
+                                <connections>
+                                    <segue destination="CHP-5L-H5c" kind="show" id="7Y4-S1-p2F"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23137254901960785" green="0.26666666666666666" blue="0.29411764705882354" alpha="1" colorSpace="deviceRGB"/>
@@ -390,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qt-Js-stA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="-588.17733990147781"/>
+            <point key="canvasLocation" x="2740" y="-669"/>
         </scene>
         <!--Logbook-->
         <scene sceneID="RNb-FG-CyA">
