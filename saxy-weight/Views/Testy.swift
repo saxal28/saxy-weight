@@ -8,14 +8,34 @@
 
 import UIKit
 
+@IBDesignable
 class Testy: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBInspectable var blockColor: UIColor = UIColor.cyan {
+        didSet {
+            backgroundColor = blockColor
+        }
     }
-    */
+    
+    @IBInspectable var cornerRounding: CGFloat = 10 {
+        didSet {
+            layer.cornerRadius = cornerRounding
+        }
+    }
+    
+    func prepareView(){
+        backgroundColor = blockColor
+        layer.cornerRadius = cornerRounding
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        prepareView()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        prepareView()
+    }
 
 }

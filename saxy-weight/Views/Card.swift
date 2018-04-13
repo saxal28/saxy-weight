@@ -8,16 +8,25 @@
 
 import UIKit
 
+@IBDesignable
 class Card: UIView {
     
+    @IBOutlet var cardView: Card!
     
-    
+    override func prepareForInterfaceBuilder() {
+        commonInit()
+    }
     
     func addShadow(){
         self.layer.shadowOpacity = 0.4
         self.layer.shadowOffset = CGSize(width: 0, height: 4)
         self.layer.shadowRadius = 2.0
         self.layer.shadowColor = UIColor.black.cgColor
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        commonInit()
     }
     
     override init(frame: CGRect) {
@@ -32,6 +41,8 @@ class Card: UIView {
     
     func commonInit(){
         addShadow()
+        self.backgroundColor = #colorLiteral(red: 0.2588235294, green: 0.2980392157, blue: 0.3294117647, alpha: 1)
+        
     }
     
 }

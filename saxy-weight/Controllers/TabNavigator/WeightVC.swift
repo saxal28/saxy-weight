@@ -34,6 +34,8 @@ class WeightVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         weightCard.addShadow()
+        
+        weightInput.becomeFirstResponder()
     }
     
     func addWeight(stringWeight weight: String){
@@ -48,9 +50,9 @@ class WeightVC: UIViewController {
     }
     
     func handleWeightSubmit(){
-        let lastWeight = WeightService.instance.weights.last!.weight
-        weightInput.text = ""
-        weightInput.placeholder = "Previous: \(lastWeight)"
+//        let lastWeight = WeightService.instance.weights.last!.weight
+//        weightInput.text = ""
+//        weightInput.placeholder = "Previous: \(lastWeight)"
         weightInput.endEditing(true)
         
         performSegue(withIdentifier: "toHomeScreen", sender: nil)
