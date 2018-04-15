@@ -18,6 +18,13 @@ class WeightCell: UITableViewCell {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var weightChangeLabel: UILabel!
     
+    func updateCell(date: String, weight: String, weightChange: String) {
+        dateLabel.text = date
+        weightLabel.text = weight
+        weightChangeLabel.text = weightChange
+        
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
