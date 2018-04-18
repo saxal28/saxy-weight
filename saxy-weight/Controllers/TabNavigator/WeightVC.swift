@@ -53,13 +53,15 @@ class WeightVC: UIViewController {
     
     
     @objc func addWeightPressed(){
-        print("PRESSED!!!!")
         addWeight()
     }
     
     func addWeight(){
         let weight = weightInput.text!
         let selectedDate = Date()
+        
+//        weightInput.endEditing(true)
+        
         guard let selectedWeight = Double(weight) else {
             print("no weight entered")
             return

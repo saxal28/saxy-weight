@@ -1,18 +1,32 @@
 PODS:
   - Alamofire (4.5.1)
+  - DateTimePicker (1.2)
   - DateToolsSwift (2.0.3)
+  - FCAlertView (1.4.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - DateTimePicker
   - DateToolsSwift
+  - FCAlertView
   - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - DateTimePicker
+    - DateToolsSwift
+    - FCAlertView
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  DateTimePicker: d3833535f731663cab99705326765a5ef18f66cc
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
+  FCAlertView: fdddd63381898c1d1a5a20c9f084fbd2c6d12f8b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 27504b4031c346bf2738e539569d8a6710e129c1
+PODFILE CHECKSUM: c1f9aa3a74615350d3e5efb1448e189d6bacb0b6
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0
