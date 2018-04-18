@@ -31,13 +31,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FwB-Am-m5B" userLabel="Header">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqA-bb-OFK">
-                                        <rect key="frame" x="372" y="49" width="22" height="22"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="addButtonPressed:" destination="CHP-5L-H5c" eventType="touchUpInside" id="xia-Ib-0Fd"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKM-wL-r3M">
                                         <rect key="frame" x="0.0" y="49.999999999999993" width="414" height="31.666666666666664"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
@@ -51,8 +44,6 @@
                                     <constraint firstItem="WKM-wL-r3M" firstAttribute="leading" secondItem="FwB-Am-m5B" secondAttribute="leading" id="Clr-pI-KWh"/>
                                     <constraint firstAttribute="trailing" secondItem="WKM-wL-r3M" secondAttribute="trailing" id="Ebp-vZ-SaD"/>
                                     <constraint firstAttribute="height" constant="180" id="a5I-Dj-KUa"/>
-                                    <constraint firstItem="eqA-bb-OFK" firstAttribute="top" secondItem="FwB-Am-m5B" secondAttribute="top" constant="49" id="dFG-DZ-gmd"/>
-                                    <constraint firstAttribute="trailing" secondItem="eqA-bb-OFK" secondAttribute="trailing" constant="20" id="w1G-73-FiP"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nn-M2-HYl" customClass="Card" customModule="saxy_weight" customModuleProvider="target">
@@ -89,20 +80,6 @@
                                     <constraint firstAttribute="height" constant="116" id="hVY-Sc-E4k"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6h-qV-ktY">
-                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.33725490200000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="tLO-8R-wPn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
-                                <state key="normal" title="Add Weight">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="CHP-5L-H5c" eventType="touchUpInside" id="zVd-Iu-XCX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23137254901960785" green="0.26666666666666666" blue="0.29411764705882354" alpha="1" colorSpace="deviceRGB"/>
                         <color key="tintColor" red="0.25882352941176467" green="0.29803921568627451" blue="0.32941176470588235" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -112,11 +89,8 @@
                             <constraint firstItem="3Nn-M2-HYl" firstAttribute="leading" secondItem="Sww-8b-XlO" secondAttribute="leading" constant="20" id="NLO-D5-j3Q"/>
                             <constraint firstItem="FwB-Am-m5B" firstAttribute="leading" secondItem="Sww-8b-XlO" secondAttribute="leading" id="TFJ-rY-J1e"/>
                             <constraint firstItem="FwB-Am-m5B" firstAttribute="top" secondItem="l5E-W2-T71" secondAttribute="top" id="Wfm-Lb-GwK"/>
-                            <constraint firstItem="Sww-8b-XlO" firstAttribute="trailing" secondItem="c6h-qV-ktY" secondAttribute="trailing" id="aXR-XQ-pVe"/>
-                            <constraint firstItem="c6h-qV-ktY" firstAttribute="leading" secondItem="Sww-8b-XlO" secondAttribute="leading" id="h7A-dF-Q8J"/>
                             <constraint firstItem="Sww-8b-XlO" firstAttribute="trailing" secondItem="3Nn-M2-HYl" secondAttribute="trailing" constant="20" id="hZf-ZF-i5q"/>
                             <constraint firstItem="FwB-Am-m5B" firstAttribute="trailing" secondItem="Sww-8b-XlO" secondAttribute="trailing" id="lGe-Um-NTw"/>
-                            <constraint firstItem="c6h-qV-ktY" firstAttribute="bottom" secondItem="Sww-8b-XlO" secondAttribute="bottom" id="sLD-99-pQa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sww-8b-XlO"/>
                     </view>

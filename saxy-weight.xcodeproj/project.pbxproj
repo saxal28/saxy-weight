@@ -23,6 +23,8 @@
 		0311E5172078826600579AA4 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E5162078826600579AA4 /* Weight.swift */; };
 		0311E51B20795ED600579AA4 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0311E51A20795ED600579AA4 /* Card.xib */; };
 		0311E51D20795FFA00579AA4 /* Testy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E51C20795FFA00579AA4 /* Testy.swift */; };
+		03C099782086CC660069F16D /* TodayWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C099772086CC660069F16D /* TodayWeightVC.swift */; };
+		03C0997A2086CC810069F16D /* WeekWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C099792086CC810069F16D /* WeekWeightVC.swift */; };
 		E728125B2079714200D42749 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728125A2079714200D42749 /* TabButton.swift */; };
 		E728125E207EF3A800D42749 /* WeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728125D207EF3A800D42749 /* WeightCell.swift */; };
 		E728126220804B7800D42749 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728126120804B7800D42749 /* RoundedButton.swift */; };
@@ -46,6 +48,8 @@
 		0311E5162078826600579AA4 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		0311E51A20795ED600579AA4 /* Card.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
 		0311E51C20795FFA00579AA4 /* Testy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testy.swift; sourceTree = "<group>"; };
+		03C099772086CC660069F16D /* TodayWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayWeightVC.swift; path = "saxy-weight/Views/TodayWeightVC.swift"; sourceTree = SOURCE_ROOT; };
+		03C099792086CC810069F16D /* WeekWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekWeightVC.swift; path = "saxy-weight/Views/WeekWeightVC.swift"; sourceTree = SOURCE_ROOT; };
 		8539E7B33FE5D1D39BD48B02 /* Pods_saxy_weight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_saxy_weight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E8DE75A73334205173E677 /* Pods-saxy-weight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saxy-weight.release.xcconfig"; path = "Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight.release.xcconfig"; sourceTree = "<group>"; };
 		E728125A2079714200D42749 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 		E728125C207EEF3E00D42749 /* WeightTabs */ = {
 			isa = PBXGroup;
 			children = (
+				03C099772086CC660069F16D /* TodayWeightVC.swift */,
+				03C099792086CC810069F16D /* WeekWeightVC.swift */,
 			);
 			path = WeightTabs;
 			sourceTree = "<group>";
@@ -319,6 +325,8 @@
 				E728125E207EF3A800D42749 /* WeightCell.swift in Sources */,
 				0311E51220771A2E00579AA4 /* SettingsVC.swift in Sources */,
 				0311E50E20771A0E00579AA4 /* WeightVC.swift in Sources */,
+				03C0997A2086CC810069F16D /* WeekWeightVC.swift in Sources */,
+				03C099782086CC660069F16D /* TodayWeightVC.swift in Sources */,
 				E728125B2079714200D42749 /* TabButton.swift in Sources */,
 				E728126220804B7800D42749 /* RoundedButton.swift in Sources */,
 				0311E5092077163400579AA4 /* Card.swift in Sources */,
