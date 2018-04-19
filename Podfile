@@ -8,9 +8,7 @@ target 'saxy-weight' do
   # Pods for saxy-weight
 
   pod 'SwiftyJSON'
-  pod ‘Alamofire’
-  pod 'DateToolsSwift'
+  pod 'Alamofire'
   pod 'DateTimePicker'
-  pod 'StatusAlert', '~> 0.10.1'
 
 end

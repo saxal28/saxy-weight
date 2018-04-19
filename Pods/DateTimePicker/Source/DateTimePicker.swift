@@ -8,18 +8,30 @@
 
 import UIKit
 
+public protocol DateTimePickerDelegate {
+    func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date)
+}
 
 @objc public class DateTimePicker: UIView {
     
     var contentHeight: CGFloat = 310
+    @objc public enum MinuteInterval: Int {
+        case `default` = 1
+        case five = 5
+        case ten = 10
+        case fifteen = 15
+        case twenty = 20
+        case thirty = 30
+    }
     
-    // public vars
+    /// custom background color, default to clear color
     public var backgroundViewColor: UIColor? = .clear {
         didSet {
             shadowView.backgroundColor = backgroundViewColor
         }
     }
     
+    /// custom highlight color, default to cyan
     public var highlightColor = UIColor(red: 0/255.0, green: 199.0/255.0, blue: 194.0/255.0, alpha: 1) {
         didSet {
             todayButton.setTitleColor(highlightColor, for: .normal)
@@ -28,6 +40,7 @@ import UIKit
         }
     }
     
+    /// custom dark color, default to grey
     public var darkColor = UIColor(red: 0, green: 22.0/255.0, blue: 39.0/255.0, alpha: 1) {
         didSet {
             dateTitleLabel.textColor = darkColor
@@ -40,6 +53,14 @@ import UIKit
         }
     }
     
+    /// custom DONE button color, default to darkColor
+    public var doneBackgroundColor: UIColor? {
+        didSet {
+            doneButton.backgroundColor = doneBackgroundColor
+        }
+    }
+    
+    /// custom background color for date cells
     public var daysBackgroundColor = UIColor(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, alpha: 1)
     
     var didLayoutAtOnce = false
@@ -54,18 +75,37 @@ import UIKit
         }
     }
     
+    /// date locale (language displayed), default to American English
+    public var locale = Locale(identifier: "en_US") {
+        didSet {
+            configureView()
+        }
+    }
+    
+    /// selected date when picker is displayed, default to current date
     public var selectedDate = Date() {
         didSet {
+            self.delegate?.dateTimePicker(self, didSelectDate: selectedDate)
             resetDateTitle()
         }
     }
     
+    public var selectedDateString: String {
+        get {
+            let formatter = DateFormatter()
+            formatter.dateFormat = self.dateFormat
+            return formatter.string(from: self.selectedDate)
+        }
+    }
+    
+    /// custom date format to be displayed, default to HH:mm dd/MM/YYYY
     public var dateFormat = "HH:mm dd/MM/YYYY" {
         didSet {
             resetDateTitle()
         }
     }
     
+    /// custom title for dismiss button, default to Cancel
     public var cancelButtonTitle = "Cancel" {
         didSet {
             cancelButton.setTitle(cancelButtonTitle, for: .normal)
@@ -74,6 +114,7 @@ import UIKit
         }
     }
     
+    /// custom title for reset time button, default to Today
     public var todayButtonTitle = "Today" {
         didSet {
             todayButton.setTitle(todayButtonTitle, for: .normal)
@@ -81,18 +122,23 @@ import UIKit
             todayButton.frame = CGRect(x: contentView.frame.width - size - 20, y: 0, width: size, height: 44)
         }
     }
+    
+    /// custom title for done button, default to DONE
     public var doneButtonTitle = "DONE" {
         didSet {
             doneButton.setTitle(doneButtonTitle, for: .normal)
         }
     }
     
+    /// whether to display time in 12 hour format, default to false
     public var is12HourFormat = false {
         didSet {
             configureView()
         }
     }
     
+    
+    /// whether to only show date in picker view, default to false
     public var isDatePickerOnly = false {
         didSet {
             if isDatePickerOnly {
@@ -102,6 +148,7 @@ import UIKit
         }
     }
     
+    /// whether to show only time in picker view, default to false
     public var isTimePickerOnly = false {
         didSet {
             if isTimePickerOnly {
@@ -111,16 +158,26 @@ import UIKit
         }
     }
 
+    /// whether to include month in date cells, default to false
     public var includeMonth = false {
         didSet {
             configureView()
         }
     }
     
+    /// Time interval, in minutes, default to 1.
+    /// If not default, infinite scrolling is off.
+    public var timeInterval = MinuteInterval.default {
+        didSet {
+            resetDateTitle()
+        }
+    }
+    
     public var timeZone = TimeZone.current
     public var completionHandler: ((Date)->Void)?
     public var dismissHandler: (() -> Void)?
-    
+    public var delegate: DateTimePickerDelegate?
+
     // private vars
     internal var hourTableView: UITableView!
     internal var minuteTableView: UITableView!
@@ -153,11 +210,12 @@ import UIKit
     }
     
     
-    @objc open class func show(selected: Date? = nil, minimumDate: Date? = nil, maximumDate: Date? = nil) -> DateTimePicker {
+    @objc open class func show(selected: Date? = nil, minimumDate: Date? = nil, maximumDate: Date? = nil, timeInterval: MinuteInterval = .default) -> DateTimePicker {
         let dateTimePicker = DateTimePicker()
-        dateTimePicker.minimumDate = minimumDate ?? Date(timeIntervalSinceNow: -3600 * 24 * 365 * 20)
-        dateTimePicker.maximumDate = maximumDate ?? Date(timeIntervalSinceNow: 3600 * 24 * 365 * 20)
+        dateTimePicker.minimumDate = minimumDate ?? Date(timeIntervalSinceNow: -3600 * 24 * 10)
+        dateTimePicker.maximumDate = maximumDate ?? Date(timeIntervalSinceNow: 3600 * 24 * 10)
         dateTimePicker.selectedDate = selected ?? dateTimePicker.minimumDate
+        dateTimePicker.timeInterval = timeInterval
         assert(dateTimePicker.minimumDate.compare(dateTimePicker.maximumDate) == .orderedAscending, "Minimum date should be earlier than maximum date")
         assert(dateTimePicker.minimumDate.compare(dateTimePicker.selectedDate) != .orderedDescending, "Selected date should be later or equal to minimum date")
         assert(dateTimePicker.selectedDate.compare(dateTimePicker.maximumDate) != .orderedDescending, "Selected date should be earlier or equal to maximum date")
@@ -280,7 +338,7 @@ import UIKit
         doneButton.frame = CGRect(x: 20, y: contentView.frame.height - 10 - 44 - 10, width: contentView.frame.width - 40, height: 44)
         doneButton.setTitle(doneButtonTitle, for: .normal)
         doneButton.setTitleColor(.white, for: .normal)
-        doneButton.backgroundColor = darkColor.withAlphaComponent(0.5)
+        doneButton.backgroundColor = doneBackgroundColor ?? darkColor.withAlphaComponent(0.5)
         doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         doneButton.layer.cornerRadius = 3
         doneButton.layer.masksToBounds = true
@@ -314,6 +372,11 @@ import UIKit
         minuteTableView.delegate = self
         minuteTableView.dataSource = self
         minuteTableView.isHidden = isDatePickerOnly
+        if timeInterval != .default {
+            minuteTableView.contentInset = UIEdgeInsetsMake(minuteTableView.frame.height / 2, 0, minuteTableView.frame.height / 2, 0)
+        } else {
+            minuteTableView.contentInset = UIEdgeInsets.zero
+        }
         contentView.addSubview(minuteTableView)
         
         // am/pm table view
@@ -425,7 +488,11 @@ import UIKit
         }
         
         if let minute = components.minute {
-            let expectedRow = minute == 0 ? 120 : minute + 60 // workaround for issue when minute = 0
+            var expectedRow = minute / timeInterval.rawValue
+            if timeInterval == .default {
+                expectedRow = expectedRow == 0 ? 120 : expectedRow + 60 // workaround for issue when minute = 0
+            }
+            
             minuteTableView.selectRow(at: IndexPath(row: expectedRow, section: 0), animated: true, scrollPosition: .middle)
         }
     }
@@ -434,9 +501,8 @@ import UIKit
         guard dateTitleLabel != nil else {
             return
         }
-        let formatter = DateFormatter()
-        formatter.dateFormat = dateFormat
-        dateTitleLabel.text = formatter.string(from: selectedDate)
+    
+        dateTitleLabel.text = selectedDateString
         dateTitleLabel.sizeToFit()
         dateTitleLabel.center = CGPoint(x: contentView.frame.width / 2, y: 22)
     }
@@ -518,6 +584,10 @@ extension DateTimePicker: UITableViewDataSource, UITableViewDelegate {
         } else if tableView == amPmTableView {
             return 2
         }
+        
+        if timeInterval != .default {
+            return 60 / timeInterval.rawValue
+        }
         // need triple of origin storage to scroll infinitely
         return 60 * 3
     }
@@ -534,7 +604,12 @@ extension DateTimePicker: UITableViewDataSource, UITableViewDelegate {
         if tableView == amPmTableView {
             cell.textLabel?.text = (indexPath.row == 0) ? "AM" : "PM"
         } else if tableView == minuteTableView{
-            cell.textLabel?.text = String(format: "%02i", indexPath.row % 60)
+            if timeInterval == .default {
+                cell.textLabel?.text = String(format: "%02i", indexPath.row % 60)
+            } else {
+                cell.textLabel?.text = String(format: "%02i", indexPath.row * timeInterval.rawValue)
+            }
+            
         } else {
             if is12HourFormat {
                 cell.textLabel?.text = String(format: "%02i", (indexPath.row % 12) + 1)
@@ -548,7 +623,16 @@ extension DateTimePicker: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
+        var selectedRow = indexPath.row
+        var shouldAnimate = true
+        
+        // adjust selected row number for inifinite scrolling
+        if selectedRow != adjustedRowForInfiniteScrolling(tableView: tableView, selectedRow: selectedRow) {
+            selectedRow = adjustedRowForInfiniteScrolling(tableView: tableView, selectedRow: selectedRow)
+            shouldAnimate = false
+        }
+        
+        tableView.selectRow(at: IndexPath(row: selectedRow, section: 0), animated: shouldAnimate, scrollPosition: .middle)
         if tableView == hourTableView {
             if is12HourFormat {
                 var hour = (indexPath.row - 12)%12 + 1
@@ -565,7 +649,12 @@ extension DateTimePicker: UITableViewDataSource, UITableViewDelegate {
             }
             
         } else if tableView == minuteTableView {
-            components.minute = (indexPath.row - 60)%60
+            if timeInterval == .default {
+                components.minute = (indexPath.row - 60)%60
+            } else {
+                components.minute = indexPath.row * timeInterval.rawValue
+            }
+            
         } else if tableView == amPmTableView {
             if let hour = components.hour,
                 indexPath.row == 0 && hour >= 12 {
@@ -586,20 +675,6 @@ extension DateTimePicker: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    // for infinite scrolling, use modulo operation.
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard scrollView != dayCollectionView && scrollView != amPmTableView else {
-            return
-        }
-        let totalHeight = scrollView.contentSize.height
-        let visibleHeight = totalHeight / 3.0
-        if scrollView.contentOffset.y < visibleHeight || scrollView.contentOffset.y > visibleHeight + visibleHeight {
-            let positionValueLoss = scrollView.contentOffset.y - CGFloat(Int(scrollView.contentOffset.y))
-            let heightValueLoss = visibleHeight - CGFloat(Int(visibleHeight))
-            let modifiedPotisionY = CGFloat(Int( scrollView.contentOffset.y ) % Int( visibleHeight ) + Int( visibleHeight )) - positionValueLoss - heightValueLoss
-            scrollView.contentOffset.y = modifiedPotisionY
-        }
-    }
 }
 
 extension DateTimePicker: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -615,14 +690,14 @@ extension DateTimePicker: UICollectionViewDataSource, UICollectionViewDelegate {
         if includeMonth {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! FullDateCollectionViewCell
             let date = dates[indexPath.item]
-            cell.populateItem(date: date, highlightColor: highlightColor, darkColor: darkColor)
+            cell.populateItem(date: date, highlightColor: highlightColor, darkColor: darkColor, locale: locale)
 
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! DateCollectionViewCell
             let date = dates[indexPath.item]
-            cell.populateItem(date: date, highlightColor: highlightColor, darkColor: darkColor)
+            cell.populateItem(date: date, highlightColor: highlightColor, darkColor: darkColor, locale: locale)
 
             return cell
         }
@@ -694,12 +769,20 @@ extension DateTimePicker: UICollectionViewDataSource, UICollectionViewDelegate {
             if let firstVisibleCell = tableView.visibleCells.first,
                 tableView != amPmTableView {
                 var firstVisibleRow = 0
-                if (tableView.contentOffset.y >= firstVisibleCell.frame.origin.y + tableView.rowHeight/2 - tableView.contentInset.top) {
+                if tableView.contentOffset.y >= firstVisibleCell.frame.origin.y + tableView.rowHeight/2 - tableView.contentInset.top {
                     firstVisibleRow = (tableView.indexPath(for: firstVisibleCell)?.row ?? 0) + 1
                 } else {
                     firstVisibleRow = (tableView.indexPath(for: firstVisibleCell)?.row ?? 0)
                 }
-                selectedRow = firstVisibleRow + 1
+                if tableView == minuteTableView && timeInterval != .default {
+                    selectedRow = min(max(firstVisibleRow, 0), self.tableView(tableView, numberOfRowsInSection: 0)-1)
+                } else {
+                    selectedRow = firstVisibleRow + 1
+                }
+                
+                // adjust selected row number for inifinite scrolling
+                selectedRow = adjustedRowForInfiniteScrolling(tableView: tableView, selectedRow: selectedRow)
+                
             } else if tableView == amPmTableView {
                 if -tableView.contentOffset.y > tableView.rowHeight/2 {
                     selectedRow = 0
@@ -725,7 +808,11 @@ extension DateTimePicker: UICollectionViewDataSource, UICollectionViewDelegate {
                     components.hour = (selectedRow - 24)%24
                 }
             } else if tableView == minuteTableView {
-                components.minute = (selectedRow - 60)%60
+                if timeInterval == .default {
+                    components.minute = (selectedRow - 60)%60
+                } else {
+                    components.minute = selectedRow * timeInterval.rawValue
+                }
             } else if tableView == amPmTableView {
                 if let hour = components.hour,
                     selectedRow == 0 && hour >= 12 {
@@ -746,5 +833,20 @@ extension DateTimePicker: UICollectionViewDataSource, UICollectionViewDelegate {
                 
             }
         }
+    }
+    
+    func adjustedRowForInfiniteScrolling(tableView: UITableView, selectedRow: Int) -> Int {
+        if tableView == minuteTableView &&
+            timeInterval != .default {
+            return selectedRow
+        }
+        
+        let numberOfRow = self.tableView(tableView, numberOfRowsInSection: 0)
+        if selectedRow == 1 {
+            return selectedRow + numberOfRow / 3
+        } else if selectedRow == numberOfRow - 2 {
+            return selectedRow - numberOfRow / 3
+        }
+        return selectedRow
     }
 }

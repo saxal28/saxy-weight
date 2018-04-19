@@ -8,3 +8,19 @@
 
 import Foundation
 
+func getToday() -> String {
+    let today = Date()
+    return formatDate(date: today)
+}
+
+func formatDate(date: Date) -> String{
+    
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .medium
+    dateFormatter.timeStyle = .none
+    
+    dateFormatter.locale = Locale(identifier: "en_US")
+    return dateFormatter.string(from: date)
+    
+}
+

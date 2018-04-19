@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import DateTimePicker
 
 class WeightVC: UIViewController {
     
-    var hasEnteredWeight = false
-    let dateFormatter = DateFormatter()
     
+    var selectedDate = Date()
     
     //===========================================
     //MARK: IB OUTLETS
@@ -20,14 +20,21 @@ class WeightVC: UIViewController {
     
     
     @IBOutlet weak var weightInput: UITextField!
-    @IBOutlet weak var dateInput: UITextField!
+    @IBOutlet weak var dateInput: UIButton!
     @IBOutlet weak var weightCard: Card!
     
     
     //===========================================
     //MARK: IB ACTIONS
     //===========================================
-
+    
+    
+    @IBAction func dateInputPressed(_ sender: Any) {
+        weightInput.endEditing(true)
+        setupDatePicker(date: selectedDate)
+    }
+    
+    
     
     //===========================================
     //MARK: LIFECYCLE / VIEW RELATED
@@ -54,7 +61,20 @@ class WeightVC: UIViewController {
     }
     
     func setupDateInput(){
-//        var today = Date.init()
+        let date = getToday()
+        dateInput.setTitle(date, for: .normal)
+    }
+    
+    func setupDatePicker(date: Date){
+        let picker = DateTimePicker.show()
+        picker.selectedDate = date
+        picker.highlightColor = #colorLiteral(red: 1, green: 0.2643394768, blue: 0.4393780231, alpha: 1)
+        picker.isDatePickerOnly = true
+        picker.completionHandler = { date in
+            self.selectedDate = date
+            self.dateInput.setTitle(formatDate(date: date), for: .normal)
+            self.weightInput.becomeFirstResponder()
+        }
     }
     
     
@@ -70,8 +90,6 @@ class WeightVC: UIViewController {
     func addWeight(){
         let weight = weightInput.text!
         let selectedDate = Date()
-        
-//        weightInput.endEditing(true)
         
         guard let selectedWeight = Double(weight) else {
             print("no weight entered")
