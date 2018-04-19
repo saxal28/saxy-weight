@@ -23,6 +23,7 @@
 		0311E5172078826600579AA4 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E5162078826600579AA4 /* Weight.swift */; };
 		0311E51B20795ED600579AA4 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0311E51A20795ED600579AA4 /* Card.xib */; };
 		0311E51D20795FFA00579AA4 /* Testy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E51C20795FFA00579AA4 /* Testy.swift */; };
+		0361E3AF20881E6F004692CF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0361E3AE20881E6F004692CF /* Date.swift */; };
 		03C099782086CC660069F16D /* TodayWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C099772086CC660069F16D /* TodayWeightVC.swift */; };
 		03C0997A2086CC810069F16D /* WeekWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C099792086CC810069F16D /* WeekWeightVC.swift */; };
 		E728125B2079714200D42749 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728125A2079714200D42749 /* TabButton.swift */; };
@@ -48,6 +49,7 @@
 		0311E5162078826600579AA4 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		0311E51A20795ED600579AA4 /* Card.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
 		0311E51C20795FFA00579AA4 /* Testy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testy.swift; sourceTree = "<group>"; };
+		0361E3AE20881E6F004692CF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		03C099772086CC660069F16D /* TodayWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayWeightVC.swift; path = "saxy-weight/Views/TodayWeightVC.swift"; sourceTree = SOURCE_ROOT; };
 		03C099792086CC810069F16D /* WeekWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekWeightVC.swift; path = "saxy-weight/Views/WeekWeightVC.swift"; sourceTree = SOURCE_ROOT; };
 		8539E7B33FE5D1D39BD48B02 /* Pods_saxy_weight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_saxy_weight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 		0311E4EF2076F5CD00579AA4 /* saxy-weight */ = {
 			isa = PBXGroup;
 			children = (
+				0361E3AD20881E60004692CF /* Util */,
 				0311E5132078820000579AA4 /* Services */,
 				0311E507207701C600579AA4 /* Controllers */,
 				0311E506207701BB00579AA4 /* Views */,
@@ -153,6 +156,14 @@
 				0311E5142078821C00579AA4 /* WeightService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		0361E3AD20881E60004692CF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0361E3AE20881E6F004692CF /* Date.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		15100C7C33B6EAC81E2F27A1 /* Pods */ = {
@@ -309,6 +320,7 @@
 				0311E5152078821C00579AA4 /* WeightService.swift in Sources */,
 				0311E4F12076F5CD00579AA4 /* AppDelegate.swift in Sources */,
 				0311E5172078826600579AA4 /* Weight.swift in Sources */,
+				0361E3AF20881E6F004692CF /* Date.swift in Sources */,
 				0311E51020771A2000579AA4 /* LogbookVC.swift in Sources */,
 				E728125E207EF3A800D42749 /* WeightCell.swift in Sources */,
 				0311E51220771A2E00579AA4 /* SettingsVC.swift in Sources */,

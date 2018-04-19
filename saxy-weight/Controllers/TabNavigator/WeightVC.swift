@@ -11,13 +11,18 @@ import UIKit
 class WeightVC: UIViewController {
     
     var hasEnteredWeight = false
+    let dateFormatter = DateFormatter()
+    
     
     //===========================================
     //MARK: IB OUTLETS
     //===========================================
-    @IBOutlet weak var dateLabel: UILabel!
+    
+    
     @IBOutlet weak var weightInput: UITextField!
+    @IBOutlet weak var dateInput: UITextField!
     @IBOutlet weak var weightCard: Card!
+    
     
     //===========================================
     //MARK: IB ACTIONS
@@ -35,6 +40,7 @@ class WeightVC: UIViewController {
         
         weightInput.becomeFirstResponder()
         setupAddWeightButton()
+        setupDateInput()
 
     }
     
@@ -46,6 +52,11 @@ class WeightVC: UIViewController {
         keyboardButton.addTarget(self, action: #selector(addWeightPressed), for: .touchUpInside)
         weightInput.inputAccessoryView = keyboardButton
     }
+    
+    func setupDateInput(){
+//        var today = Date.init()
+    }
+    
     
     //===========================================
     //MARK: ADD WEIGHT FUNCTIONS
