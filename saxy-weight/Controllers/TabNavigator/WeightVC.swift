@@ -13,6 +13,7 @@ class WeightVC: UIViewController {
     
     
     var selectedDate = Date()
+    var isEditingWeight = false
     
     //===========================================
     //MARK: IB OUTLETS
@@ -43,11 +44,12 @@ class WeightVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weightCard.addShadow()
         
         weightInput.becomeFirstResponder()
         setupAddWeightButton()
         setupDateInput()
+        
+        determineIfEditingWeight()
 
     }
     
@@ -77,6 +79,14 @@ class WeightVC: UIViewController {
         }
     }
     
+    func determineIfEditingWeight(){
+        
+        if WeightService.instance.hasEnteredWeightToday() {
+            isEditingWeight = true
+        }
+        
+    }
+    
     
     //===========================================
     //MARK: ADD WEIGHT FUNCTIONS
@@ -89,7 +99,6 @@ class WeightVC: UIViewController {
     
     func addWeight(){
         let weight = weightInput.text!
-        let selectedDate = Date()
         
         guard let selectedWeight = Double(weight) else {
             print("no weight entered")

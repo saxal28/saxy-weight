@@ -10,5 +10,6 @@ target 'saxy-weight' do
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'DateTimePicker'
+  pod 'Dollar'
 
 end

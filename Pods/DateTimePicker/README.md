@@ -20,8 +20,7 @@ A nicer iOS UI component for picking date and time.
 
 ## Requirements
 
-- Swift 4.0 & xCode 9 
-- For Swift 3.0, please use version 1.1.4
+- Swift 3.0 & Xcode 8
 - iOS 9 and later
 
 ## Installation

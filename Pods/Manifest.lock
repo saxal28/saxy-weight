@@ -1,18 +1,28 @@
 PODS:
   - Alamofire (4.5.1)
-  - DateTimePicker (1.2.1)
+  - DateTimePicker (1.2)
+  - Dollar (7.0.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - DateTimePicker
+  - Dollar
   - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - DateTimePicker
+    - Dollar
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  DateTimePicker: c7b10f7dfe6eb06014c88df964a0a994f246b791
+  DateTimePicker: d3833535f731663cab99705326765a5ef18f66cc
+  Dollar: b052b910c711bed91c26caeaec85aa22bccf1655
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 20b558dfc8eec0fd4592d33e3b89281a67882c75
+PODFILE CHECKSUM: f0df297b7036636c5bdee0bbf04b76a212ca3e6f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

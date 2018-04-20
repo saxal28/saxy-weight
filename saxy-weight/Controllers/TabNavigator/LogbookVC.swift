@@ -32,10 +32,11 @@ class LogbookVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weightCell", for: indexPath) as! WeightCell
         let data = WeightService.instance.weights[indexPath.row]
+        let date = formatDate(date: data.date)
         
         print("row!", indexPath.row)
         
-        cell.updateCell(date: "12/02/1942", weight: "\(data.weight)", weightChange: "0.3")
+        cell.updateCell(date: date, weight: "\(data.weight)", weightChange: "0.3")
         
         return cell
     }

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Dollar
+
 
 class WeightService {
     var weights = [Weight]()
@@ -14,7 +16,31 @@ class WeightService {
     static var instance = WeightService()
     
     func addWeight(weight: Weight){
-        weights.append(weight);
-        print("Weights", weights)
+        
+        if hasEnteredWeightToday() {
+            print("HEY", "You have already entered weight today dummy")
+        } else {
+            weights.append(weight);
+        }
+        
     }
+    
+    func hasEnteredWeightToday() -> Bool {
+        for weight in weights {
+        
+            let today = formatDate(date: Date())
+            let date = formatDate(date: weight.date)
+            
+            if today == date {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func updateWeight(weight: Weight){
+        
+    }
+    
 }
