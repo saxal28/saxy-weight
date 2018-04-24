@@ -11,7 +11,7 @@ import DateTimePicker
 
 class WeightVC: UIViewController {
     
-    
+    let keyboardButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
     var selectedDate = Date()
     var isEditingWeight = false
     
@@ -23,6 +23,7 @@ class WeightVC: UIViewController {
     @IBOutlet weak var weightInput: UITextField!
     @IBOutlet weak var dateInput: UIButton!
     @IBOutlet weak var weightCard: Card!
+    @IBOutlet weak var headerTitle: UILabel!
     
     
     //===========================================
@@ -56,7 +57,7 @@ class WeightVC: UIViewController {
     func setupAddWeightButton(){
         let keyboardButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
         keyboardButton.backgroundColor = #colorLiteral(red: 1, green: 0.2642144561, blue: 0.4392985404, alpha: 1)
-        keyboardButton.setTitle("Add Weight", for: .normal)
+        keyboardButton.setTitle("Save Weight", for: .normal)
         keyboardButton.titleLabel!.font = UIFont(name: "Avenir Next Condensed", size: 18.0)
         keyboardButton.addTarget(self, action: #selector(addWeightPressed), for: .touchUpInside)
         weightInput.inputAccessoryView = keyboardButton
@@ -82,8 +83,15 @@ class WeightVC: UIViewController {
     func determineIfEditingWeight(){
         
         if WeightService.instance.hasEnteredWeightToday() {
-            isEditingWeight = true
+            setupUIForEditMode()
         }
+        
+    }
+    
+    func setupUIForEditMode(){
+        
+        weightInput.text = String(WeightService.instance.getTodaysWeight()!.weight)
+        headerTitle.text = "Edit Weight"
         
     }
     

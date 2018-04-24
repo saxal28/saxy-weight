@@ -101,6 +101,7 @@
                     <tabBarItem key="tabBarItem" title="Enter Weight" image="scale" id="z7f-CL-GKH"/>
                     <connections>
                         <outlet property="dateInput" destination="ubg-22-bu2" id="eZi-xu-7cl"/>
+                        <outlet property="headerTitle" destination="WKM-wL-r3M" id="bRt-xg-gMe"/>
                         <outlet property="weightCard" destination="3Nn-M2-HYl" id="7zp-wc-X89"/>
                         <outlet property="weightInput" destination="lcP-kh-ep0" id="178-U9-ZUT"/>
                         <segue destination="XZs-XQ-Cem" kind="show" identifier="toHomeScreen" id="hdH-cb-fcg"/>
