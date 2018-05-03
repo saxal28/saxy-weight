@@ -12,9 +12,11 @@ class Weight {
     
     var weight: Double
     var date: Date
+    var id: String;
     
     init(selectedWeight: Double, selectedDate: Date) {
         weight = selectedWeight
         date = selectedDate
+        id = UUID().uuidString
     }
 }

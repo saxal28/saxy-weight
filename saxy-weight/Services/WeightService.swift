@@ -18,11 +18,21 @@ class WeightService {
     
     func addWeight(weight: Weight){
         
-        if hasEnteredWeightToday() {
-            print("HEY", "You have already entered weight today dummy")
-            updateWeight(weight: weight)
-        } else {
-            weights.append(weight);
+        let weightToAdd = weight
+        
+        if weights.count == 0 {
+            print("HEY adding initial weight")
+            return weights.append(weight);
+        }
+        
+        for i in 0...weights.count  {
+            if formatDate(date: weightToAdd.date) == formatDate(date: weights[i].date) {
+                print("HEY updating existing weight")
+                return weights[i].weight = weightToAdd.weight
+            } else {
+                print("HEY adding another weight for another day")
+                return weights.append(weight)
+            }
         }
         
     }
@@ -54,29 +64,7 @@ class WeightService {
         return false
     }
     
-    func updateWeight(weight: Weight){
-        
-        let date = formatDate(date: weight.date)
-        
-        for loopWeight in weights {
-            
-            let loopDate = formatDate(date: loopWeight.date)
-            
-            if date == loopDate  {
-
-                print("HEY Updating today's weight")
-                loopWeight.date = weight.date
-                return
-
-            } else {
-                print("HEY Updating Another Day's Weight")
-                
-                let test = `$`.find([1,2,3,4,5], callback: { $0 == 2 })
-                print("HEY", test!)
-                
-                weights.append(weight)
-            }
-        }
+    func updateWeights(weight: Weight) {
         
     }
     
