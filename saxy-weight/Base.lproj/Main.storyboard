@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZs-XQ-Cem">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XZs-XQ-Cem">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Book</string>
-        </array>
-        <array key="AvenirNextCondensed.ttc">
-            <string>AvenirNextCondensed-Bold</string>
-            <string>AvenirNextCondensed-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Enter Weight-->
         <scene sceneID="g8V-xA-AQm">
@@ -101,6 +92,7 @@
                     <tabBarItem key="tabBarItem" title="Enter Weight" image="scale" id="z7f-CL-GKH"/>
                     <connections>
                         <outlet property="dateInput" destination="ubg-22-bu2" id="eZi-xu-7cl"/>
+                        <outlet property="header" destination="FwB-Am-m5B" id="bt3-F0-fgl"/>
                         <outlet property="headerTitle" destination="WKM-wL-r3M" id="bRt-xg-gMe"/>
                         <outlet property="weightCard" destination="3Nn-M2-HYl" id="7zp-wc-X89"/>
                         <outlet property="weightInput" destination="lcP-kh-ep0" id="178-U9-ZUT"/>
@@ -356,6 +348,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="BOY-8R-oOi"/>
                     <connections>
+                        <outlet property="todayActionLabel" destination="8bg-RZ-Wb6" id="567-06-BCD"/>
+                        <outlet property="todayWeightLabel" destination="FRv-Tc-FR1" id="1kd-na-kWH"/>
                         <outletCollection property="tabs" destination="Q7f-WO-w17" collectionClass="NSMutableArray" id="vaf-LJ-cfJ"/>
                         <outletCollection property="tabs" destination="sQK-qi-o3D" collectionClass="NSMutableArray" id="HYC-Lj-EdO"/>
                         <outletCollection property="tabs" destination="wnL-5b-yMs" collectionClass="NSMutableArray" id="Msg-P6-tzC"/>
@@ -443,13 +437,13 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qK-pI-tAH">
-                                                            <rect key="frame" x="341.66666666666669" y="11" width="17.333333333333314" height="13"/>
+                                                            <rect key="frame" x="336.66666666666669" y="11" width="17.333333333333314" height="13"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/12/12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NT1-wl-PM4">
-                                                            <rect key="frame" x="15.000000000000004" y="11" width="57.333333333333343" height="13"/>
+                                                            <rect key="frame" x="20.000000000000004" y="11" width="57.333333333333343" height="13"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>

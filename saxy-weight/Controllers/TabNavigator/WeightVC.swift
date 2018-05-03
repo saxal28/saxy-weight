@@ -24,6 +24,7 @@ class WeightVC: UIViewController {
     @IBOutlet weak var dateInput: UIButton!
     @IBOutlet weak var weightCard: Card!
     @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet weak var header: UIView!
     
     
     //===========================================
@@ -32,8 +33,8 @@ class WeightVC: UIViewController {
     
     
     @IBAction func dateInputPressed(_ sender: Any) {
-        weightInput.endEditing(true)
-        setupDatePicker(date: selectedDate)
+//        weightInput.endEditing(true)
+//        setupDatePicker(date: selectedDate)
     }
     
     
@@ -46,19 +47,20 @@ class WeightVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        determineIfEditingWeight()
+        
         weightInput.becomeFirstResponder()
         setupAddWeightButton()
         setupDateInput()
-        
-        determineIfEditingWeight()
-
+    
     }
     
     func setupAddWeightButton(){
-        let keyboardButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
-        keyboardButton.backgroundColor = #colorLiteral(red: 1, green: 0.2642144561, blue: 0.4392985404, alpha: 1)
-        keyboardButton.setTitle("Save Weight", for: .normal)
-        keyboardButton.titleLabel!.font = UIFont(name: "Avenir Next Condensed", size: 18.0)
+        let keyboardButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 60))
+        
+        keyboardButton.backgroundColor = isEditingWeight ? #colorLiteral(red: 0.2392156863, green: 0.7490196078, blue: 1, alpha: 1) : #colorLiteral(red: 1, green: 0.2643394768, blue: 0.4393780231, alpha: 1)
+        keyboardButton.setTitle(isEditingWeight ? "Edit Weight" : "Save Weight", for: .normal)
+        keyboardButton.titleLabel!.font = UIFont(name: Font.bold.rawValue, size: 18.0)
         keyboardButton.addTarget(self, action: #selector(addWeightPressed), for: .touchUpInside)
         weightInput.inputAccessoryView = keyboardButton
     }
@@ -71,7 +73,7 @@ class WeightVC: UIViewController {
     func setupDatePicker(date: Date){
         let picker = DateTimePicker.show()
         picker.selectedDate = date
-        picker.highlightColor = #colorLiteral(red: 1, green: 0.2643394768, blue: 0.4393780231, alpha: 1)
+        picker.highlightColor = isEditingWeight ? #colorLiteral(red: 0.2392156863, green: 0.7490196078, blue: 1, alpha: 1) : #colorLiteral(red: 1, green: 0.2643394768, blue: 0.4393780231, alpha: 1)
         picker.isDatePickerOnly = true
         picker.completionHandler = { date in
             self.selectedDate = date
@@ -92,6 +94,9 @@ class WeightVC: UIViewController {
         
         weightInput.text = String(WeightService.instance.getTodaysWeight()!.weight)
         headerTitle.text = "Edit Weight"
+        isEditingWeight = true
+        
+        header.backgroundColor = #colorLiteral(red: 0.2392156863, green: 0.7490196078, blue: 1, alpha: 1)
         
     }
     
