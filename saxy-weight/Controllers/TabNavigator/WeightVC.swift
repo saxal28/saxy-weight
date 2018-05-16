@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DateTimePicker
 
 class WeightVC: UIViewController {
     
@@ -70,17 +69,17 @@ class WeightVC: UIViewController {
         dateInput.setTitle(date, for: .normal)
     }
     
-    func setupDatePicker(date: Date){
-        let picker = DateTimePicker.show()
-        picker.selectedDate = date
-        picker.highlightColor = isEditingWeight ? #colorLiteral(red: 0.2392156863, green: 0.7490196078, blue: 1, alpha: 1) : #colorLiteral(red: 1, green: 0.2643394768, blue: 0.4393780231, alpha: 1)
-        picker.isDatePickerOnly = true
-        picker.completionHandler = { date in
-            self.selectedDate = date
-            self.dateInput.setTitle(formatDate(date: date), for: .normal)
-            self.weightInput.becomeFirstResponder()
-        }
-    }
+//    func setupDatePicker(date: Date){
+//        let picker = DateTimePicker.show()
+//        picker.selectedDate = date
+//        picker.highlightColor = isEditingWeight ? #colorLiteral(red: 0.2392156863, green: 0.7490196078, blue: 1, alpha: 1) : #colorLiteral(red: 1, green: 0.2643394768, blue: 0.4393780231, alpha: 1)
+//        picker.isDatePickerOnly = true
+//        picker.completionHandler = { date in
+//            self.selectedDate = date
+//            self.dateInput.setTitle(formatDate(date: date), for: .normal)
+//            self.weightInput.becomeFirstResponder()
+//        }
+//    }
     
     func determineIfEditingWeight(){
         

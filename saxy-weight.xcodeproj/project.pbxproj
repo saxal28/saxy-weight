@@ -27,6 +27,7 @@
 		03C099782086CC660069F16D /* TodayWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C099772086CC660069F16D /* TodayWeightVC.swift */; };
 		03C0997A2086CC810069F16D /* WeekWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C099792086CC810069F16D /* WeekWeightVC.swift */; };
 		03FD6788209AA44A00CA9CA1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD6787209AA44A00CA9CA1 /* Font.swift */; };
+		03FD678A209AAFFF00CA9CA1 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD6789209AAFFF00CA9CA1 /* MainNavigationVC.swift */; };
 		E728125B2079714200D42749 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728125A2079714200D42749 /* TabButton.swift */; };
 		E728125E207EF3A800D42749 /* WeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728125D207EF3A800D42749 /* WeightCell.swift */; };
 		E728126220804B7800D42749 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728126120804B7800D42749 /* RoundedButton.swift */; };
@@ -54,6 +55,7 @@
 		03C099772086CC660069F16D /* TodayWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayWeightVC.swift; path = "saxy-weight/Views/TodayWeightVC.swift"; sourceTree = SOURCE_ROOT; };
 		03C099792086CC810069F16D /* WeekWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekWeightVC.swift; path = "saxy-weight/Views/WeekWeightVC.swift"; sourceTree = SOURCE_ROOT; };
 		03FD6787209AA44A00CA9CA1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		03FD6789209AAFFF00CA9CA1 /* MainNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationVC.swift; sourceTree = "<group>"; };
 		8539E7B33FE5D1D39BD48B02 /* Pods_saxy_weight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_saxy_weight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E8DE75A73334205173E677 /* Pods-saxy-weight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saxy-weight.release.xcconfig"; path = "Pods/Target Support Files/Pods-saxy-weight/Pods-saxy-weight.release.xcconfig"; sourceTree = "<group>"; };
 		E728125A2079714200D42749 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
@@ -101,8 +103,8 @@
 				0311E506207701BB00579AA4 /* Views */,
 				0311E505207701B300579AA4 /* Models */,
 				0311E4F42076F5CD00579AA4 /* Main.storyboard */,
-				0311E4FA2076F5CD00579AA4 /* Assets.xcassets */,
 				0311E4FC2076F5CD00579AA4 /* LaunchScreen.storyboard */,
+				0311E4FA2076F5CD00579AA4 /* Assets.xcassets */,
 				0311E4FF2076F5CD00579AA4 /* Info.plist */,
 				0311E4F72076F5CD00579AA4 /* saxy_weight.xcdatamodeld */,
 			);
@@ -148,6 +150,7 @@
 				0311E50D20771A0E00579AA4 /* WeightVC.swift */,
 				0311E50F20771A2000579AA4 /* LogbookVC.swift */,
 				0311E51120771A2E00579AA4 /* SettingsVC.swift */,
+				03FD6789209AAFFF00CA9CA1 /* MainNavigationVC.swift */,
 			);
 			path = TabNavigator;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FD678A209AAFFF00CA9CA1 /* MainNavigationVC.swift in Sources */,
 				0311E4F32076F5CD00579AA4 /* ViewController.swift in Sources */,
 				0311E50C207719FA00579AA4 /* HomeVC.swift in Sources */,
 				0311E4F92076F5CD00579AA4 /* saxy_weight.xcdatamodeld in Sources */,
