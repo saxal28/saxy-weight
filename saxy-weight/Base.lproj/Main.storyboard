@@ -632,27 +632,27 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="676"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="0.0" reuseIdentifier="weightCell" id="UU7-at-xCw" customClass="WeightCell" customModule="saxy_weight" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="35"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="0.0" reuseIdentifier="weightCell" rowHeight="44" id="UU7-at-xCw" customClass="WeightCell" customModule="saxy_weight" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UU7-at-xCw" id="yPx-uJ-XA0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qK-pI-tAH">
-                                                            <rect key="frame" x="342.66666666666669" y="11" width="17.333333333333314" height="13"/>
+                                                            <rect key="frame" x="342.66666666666669" y="11" width="17.333333333333314" height="22"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/12/12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NT1-wl-PM4">
-                                                            <rect key="frame" x="14.999999999999996" y="11" width="57.666666666666657" height="13"/>
+                                                            <rect key="frame" x="14.999999999999996" y="11" width="57.666666666666657" height="22"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="185.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkt-b0-er0">
-                                                            <rect key="frame" x="170" y="8.0000000000000018" width="35" height="19.666666666666671"/>
+                                                            <rect key="frame" x="170" y="12.666666666666666" width="35" height="19.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -671,6 +671,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.28980451822280884" green="0.33609628677368164" blue="0.36510255932807922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="NT1-wl-PM4" id="NX9-Yy-4ri"/>
                                                     <outlet property="weightChangeLabel" destination="5qK-pI-tAH" id="f15-92-X6z"/>
