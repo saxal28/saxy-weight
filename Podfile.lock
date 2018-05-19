@@ -1,28 +1,34 @@
 PODS:
   - Alamofire (4.5.1)
   - DateTimePicker (1.2)
-  - Dollar (7.0.0)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - RealmSwift (3.5.0):
+    - Realm (= 3.5.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - DateTimePicker
-  - Dollar
+  - RealmSwift
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - DateTimePicker
-    - Dollar
+    - Realm
+    - RealmSwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   DateTimePicker: d3833535f731663cab99705326765a5ef18f66cc
-  Dollar: b052b910c711bed91c26caeaec85aa22bccf1655
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: f0df297b7036636c5bdee0bbf04b76a212ca3e6f
+PODFILE CHECKSUM: 02bbd4ab09d8b066d2029dbde7bff81dea134ff5
 
 COCOAPODS: 1.5.0
