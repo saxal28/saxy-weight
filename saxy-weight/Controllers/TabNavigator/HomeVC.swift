@@ -33,7 +33,7 @@ class HomeVC: UIViewController {
         
         if(service.hasEnteredWeightToday()) {
             
-            addWeightButton.backgroundColor = #colorLiteral(red: 0.2392156863, green: 0.7490196078, blue: 1, alpha: 1)
+//            addWeightButton.backgroundColor = #colorLiteral(red: 0.2392156863, green: 0.7490196078, blue: 1, alpha: 1)
             
             
 //            let todayWeight = service.getTodaysWeight()

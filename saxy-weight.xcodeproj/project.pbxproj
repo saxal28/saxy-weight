@@ -23,7 +23,11 @@
 		0311E5172078826600579AA4 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E5162078826600579AA4 /* Weight.swift */; };
 		0311E51B20795ED600579AA4 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0311E51A20795ED600579AA4 /* Card.xib */; };
 		0311E51D20795FFA00579AA4 /* Testy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311E51C20795FFA00579AA4 /* Testy.swift */; };
+		0317C40120ACFE8100C37FE3 /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317C40020ACFE8100C37FE3 /* RedVC.swift */; };
+		0317C40320AD003800C37FE3 /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317C40220AD003800C37FE3 /* BlueVC.swift */; };
+		0317C40520AD0E6A00C37FE3 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0317C40420AD0E6A00C37FE3 /* CalendarVC.swift */; };
 		0361E3AF20881E6F004692CF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0361E3AE20881E6F004692CF /* Date.swift */; };
+		038601E820AE75CB00EBF4BB /* InfoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038601E720AE75CB00EBF4BB /* InfoBox.swift */; };
 		03C099782086CC660069F16D /* TodayWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C099772086CC660069F16D /* TodayWeightVC.swift */; };
 		03C0997A2086CC810069F16D /* WeekWeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C099792086CC810069F16D /* WeekWeightVC.swift */; };
 		03FD6788209AA44A00CA9CA1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD6787209AA44A00CA9CA1 /* Font.swift */; };
@@ -51,7 +55,11 @@
 		0311E5162078826600579AA4 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		0311E51A20795ED600579AA4 /* Card.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
 		0311E51C20795FFA00579AA4 /* Testy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testy.swift; sourceTree = "<group>"; };
+		0317C40020ACFE8100C37FE3 /* RedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
+		0317C40220AD003800C37FE3 /* BlueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
+		0317C40420AD0E6A00C37FE3 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		0361E3AE20881E6F004692CF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		038601E720AE75CB00EBF4BB /* InfoBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBox.swift; sourceTree = "<group>"; };
 		03C099772086CC660069F16D /* TodayWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayWeightVC.swift; path = "saxy-weight/Views/TodayWeightVC.swift"; sourceTree = SOURCE_ROOT; };
 		03C099792086CC810069F16D /* WeekWeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeekWeightVC.swift; path = "saxy-weight/Views/WeekWeightVC.swift"; sourceTree = SOURCE_ROOT; };
 		03FD6787209AA44A00CA9CA1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 				E728125A2079714200D42749 /* TabButton.swift */,
 				E728125D207EF3A800D42749 /* WeightCell.swift */,
 				E728126120804B7800D42749 /* RoundedButton.swift */,
+				038601E720AE75CB00EBF4BB /* InfoBox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +147,8 @@
 				0311E50A207719B700579AA4 /* TabNavigator */,
 				0311E4F02076F5CD00579AA4 /* AppDelegate.swift */,
 				0311E4F22076F5CD00579AA4 /* ViewController.swift */,
+				0317C40020ACFE8100C37FE3 /* RedVC.swift */,
+				0317C40220AD003800C37FE3 /* BlueVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +162,7 @@
 				0311E50F20771A2000579AA4 /* LogbookVC.swift */,
 				0311E51120771A2E00579AA4 /* SettingsVC.swift */,
 				03FD6789209AAFFF00CA9CA1 /* MainNavigationVC.swift */,
+				0317C40420AD0E6A00C37FE3 /* CalendarVC.swift */,
 			);
 			path = TabNavigator;
 			sourceTree = "<group>";
@@ -320,6 +332,8 @@
 			files = (
 				03FD678A209AAFFF00CA9CA1 /* MainNavigationVC.swift in Sources */,
 				0311E4F32076F5CD00579AA4 /* ViewController.swift in Sources */,
+				0317C40520AD0E6A00C37FE3 /* CalendarVC.swift in Sources */,
+				038601E820AE75CB00EBF4BB /* InfoBox.swift in Sources */,
 				0311E50C207719FA00579AA4 /* HomeVC.swift in Sources */,
 				0311E4F92076F5CD00579AA4 /* saxy_weight.xcdatamodeld in Sources */,
 				0311E5152078821C00579AA4 /* WeightService.swift in Sources */,
@@ -332,11 +346,13 @@
 				0311E50E20771A0E00579AA4 /* WeightVC.swift in Sources */,
 				03C0997A2086CC810069F16D /* WeekWeightVC.swift in Sources */,
 				03C099782086CC660069F16D /* TodayWeightVC.swift in Sources */,
+				0317C40120ACFE8100C37FE3 /* RedVC.swift in Sources */,
 				E728125B2079714200D42749 /* TabButton.swift in Sources */,
 				03FD6788209AA44A00CA9CA1 /* Font.swift in Sources */,
 				E728126220804B7800D42749 /* RoundedButton.swift in Sources */,
 				0311E5092077163400579AA4 /* Card.swift in Sources */,
 				0311E51D20795FFA00579AA4 /* Testy.swift in Sources */,
+				0317C40320AD003800C37FE3 /* BlueVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
