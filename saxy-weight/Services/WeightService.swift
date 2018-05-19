@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Dollar
 
 
 class WeightService {
@@ -34,6 +33,11 @@ class WeightService {
                 return weights.append(weight)
             }
         }
+    }
+    
+    func deleteWeight(weight: Weight) {
+        
+        return weights = weights.filter {$0 !== weight}
         
     }
     

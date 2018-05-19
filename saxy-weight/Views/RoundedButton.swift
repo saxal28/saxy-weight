@@ -24,6 +24,10 @@ class RoundedButton: UIButton {
 
     func setupButton(){
         self.layer.cornerRadius = self.frame.width / 2
+        
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowRadius = 3.0
     }
 
 }
